@@ -1,16 +1,11 @@
 # belajar_sqflite
 
-A new Flutter project.
+## file database_instance
 
-## Getting Started
+#### Fungsi allData
 
-This project is a starting point for a Flutter application.
+digunakan untuk mengambil semua data dari tabel produk dalam database. Pada baris pertama, await database!.query(tableName) akan mengambil semua data dari tabel dengan nama tableName (dalam hal ini, tabel 'produk'). Data yang diambil disimpan dalam variabel data. Kemudian, menggunakan metode map, setiap data diubah menjadi objek ProdukModel menggunakan fungsi ProdukModel.fromJson(e). Hasilnya adalah daftar ProdukModel yang kemudian dikembalikan.
 
-A few resources to get you started if this is your first Flutter project:
+#### Fungsi insert
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+digunakan untuk memasukkan data baru ke dalam tabel produk. Pada baris pertama, await database!.insert(tableName, row) memasukkan data yang diberikan (parameter row) ke dalam tabel dengan nama tableName. Hasil dari operasi insert ini (biasanya id dari data yang baru dimasukkan) disimpan dalam variabel queryInsert dan kemudian dikembalikan sebagai nilai fungsi.
