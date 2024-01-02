@@ -49,7 +49,6 @@ class _CreatePageState extends State<CreatePage> {
                   });
                   // ignore: use_build_context_synchronously
                   Navigator.pop(context);
-                  setState(() {});
                 },
                 child: const Text('Submit'))
           ],
