@@ -67,4 +67,9 @@ whereArgs: Nilai yang akan digunakan untuk menggantikan placeholder dalam where.
         .update(tableName, row, where: '$id = ?', whereArgs: [idParam]);
     return queryUpdate;
   }
+
+  //membuat function delete
+  Future delete(int idParam) async {
+    await database!.delete(tableName, where: '$id = ?', whereArgs: [idParam]);
+  }
 }
