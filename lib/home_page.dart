@@ -20,6 +20,12 @@ class _HomePageState extends State<HomePage> {
     setState(() {});
   }
 
+//membuat function delete data
+  Future delete(int idParam) async {
+    await databaseInstance!.delete(idParam);
+    setState(() {});
+  }
+
   @override
   void initState() {
     databaseInstance = DatabaseInstance();
@@ -57,6 +63,10 @@ class _HomePageState extends State<HomePage> {
                           return ListTile(
                             subtitle:
                                 Text(snapshot.data![index].category ?? ''),
+                            leading: IconButton(
+                                onPressed: () =>
+                                    delete(snapshot.data![index].id!),
+                                icon: const Icon(Icons.delete)),
                             trailing: IconButton(
                                 onPressed: () {
                                   Navigator.push(context,
